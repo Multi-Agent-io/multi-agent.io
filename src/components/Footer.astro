@@ -5,8 +5,8 @@ interface FooterProps {
 }
 
 const props: FooterProps = {
-  companyName: "Мультиагентные системы",
-  year: new Date().getFullYear(),
+  companyName: 'ООО "Мультиагентные системы"',
+  year: 2026,
 };
 ---
 
@@ -14,7 +14,7 @@ const props: FooterProps = {
 <footer class="footer">
   <div class="layout">
     <div class="contacts__address">
-      <div class="copyright">© {props.companyName} {props.year}</div>
+      <div class="copyright">{props.companyName}, {props.year}</div>
       <address>
         <span>195299, г. Санкт-Петербург,</span>
         <span>ул. Киришская, д. 2, литера А,</span>
@@ -22,7 +22,10 @@ const props: FooterProps = {
         <span>ИНН/ОГРН: 7840097350/1217800127050</span>
       </address>
       </div>
-    <a class="underline" href="mailto:general@multi-agent.io" aria-label="свяжитесь с нами по email">general@multi-agent.io</a>
+    <div class="contacts">
+      <a class="underline" href="mailto:general@multi-agent.io" aria-label="свяжитесь с нами по email">general@multi-agent.io</a>
+      <a class="underline" href="tel:+79046179364" aria-label="позвоните нам">+7 (904) 617-93-64</a>
+    </div>
   </div>
 </footer>
 
@@ -60,6 +63,19 @@ const props: FooterProps = {
   .footer .layout a {
     display: inline;
     height: 100%;
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--space-half) * 0.5);
+    align-items: flex-end;
+  }
+
+  @media screen and (max-width: 800px) {
+    .contacts {
+      align-items: flex-start;
+    }
   }
   
 

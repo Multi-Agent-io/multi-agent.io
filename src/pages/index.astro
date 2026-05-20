@@ -3,7 +3,6 @@ import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 
 import IOT from '../assets/img/multi-agent-systems.webp';
-import ALTRUISTS from '../assets/img/altruist.webp';
 ---
 
 <Layout
@@ -24,16 +23,21 @@ import ALTRUISTS from '../assets/img/altruist.webp';
         </div>
       </div>
 
-      <div class="altruists">
-        <Image src={ALTRUISTS} alt="гражданская станция Альтруист"/>
-      </div>
-
-      <div class="wrapper"> 
+      <div class="wrapper">
           <a href="http://yourspace.multi-agent.io/" target="_blank">Умный дом YourSpace</a>
-          <a href="https://shop.multi-agent.io/" target="_blank">Магазин "Железо для Киберпанков"</a>
+          <a href="https://feecc.ru/" target="_blank">MES система для производств: FEECC</a>
       </div>
 
-      <p class="mas__feecc">Помимо компетенций в сфере умных домов и IoT, наша компания занимается разработкой ПО. Информация на <a class="title-blue underline" href="https://feecc.ru/" aria-label="Узнайте больше о наших разработках" target="_blank">feecc.ru</a></p>
+      <div class="it-activity">
+        <h2>ИТ Деятельность компании</h2>
+        <ul>
+          <li>Компания осуществляет деятельность по основному ОКВЭД 62.01 (Разработка компьютерного программного обеспечения).</li>
+          <li>ИТ деятельность компании соответствует коду 1.01 из <a class="title-blue" href="https://digital.gov.ru/documents/prikaz-ministerstva-czifrovogo-razvitiya-svyazi-i-massovyh-kommunikaczij-rossijskoj-federaczii-%E2%84%96-449" target="_blank" rel="noopener">Приказа Минцифры России от 11 мая 2023 г. № 449 «Об утверждении перечня видов деятельности в области информационных технологий»</a>.</li>
+          <li>Организация является правообладателем программы для ЭВМ: <a class="title-blue" href="https://www1.fips.ru/fips_servl/fips_servlet?DB=EVM&DocNumber=2022660983&TypeFile=html" target="_blank" rel="noopener">Свидетельство о регистрации программы для ЭВМ №2022660983 от 14.06.2022</a>.</li>
+          <li>ПО внесено в реестр Российского ПО: <a class="title-blue" href="https://reestr.digital.gov.ru/reestr/1683986/?sphrase_id=20018491" target="_blank" rel="noopener">Реестровая запись №18512 от 09.08.2023</a>.</li>
+          <li>Подробная информация о ПО (технологический стек, порядок и стоимость приобретения) доступна на сайте <a class="title-blue" href="https://feecc.ru/" target="_blank" rel="noopener">feecc.ru</a>.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -49,21 +53,37 @@ import ALTRUISTS from '../assets/img/altruist.webp';
     margin-bottom: var(--space-half);
   }
 
-  .altruists {
-    width: 70%;
-    display: block;
-    margin: 0 auto;
+  .it-activity {
+    max-width: 1200px;
     margin-bottom: calc(var(--space) * 2);
   }
 
-  .altruists img {
-    width: 100%;
-    height: 100%;
-    border: 15px solid #444; 
-    box-shadow:
-      0 0 8px rgba(128, 128, 128, 0.4), 
-      0 4px 12px rgba(0, 0, 0, 0.6);   
-    border-radius: 8px;
+  .it-activity h2 {
+    margin-bottom: var(--space);
+    font-size: calc(var(--base-font-size) * 1.8);
+  }
+
+  .it-activity ul {
+    list-style: disc;
+    padding-left: calc(var(--space) * 1.2);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-half);
+  }
+
+  .it-activity li {
+    font-size: calc(var(--base-font-size) * 1.1);
+    line-height: 1.5;
+  }
+
+  .it-activity a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  .it-activity a:hover {
+    color: var(--text-accent);
   }
 
   .wrapper {
@@ -108,20 +128,6 @@ import ALTRUISTS from '../assets/img/altruist.webp';
   }
 
 
-  .mas__feecc {
-    max-width: 1200px;
-    font-size: calc(var(--base-font-size) * 1.5);
-    font-variation-settings: var(--font-flex-medium);
-  }
-
-  .mas__feecc a {
-  font-variation-settings: var(--font-flex-medium);
-  }
-
-  .mas__feecc a:hover {
-    color: var(--text-accent)
-  }
-
   /* media queries */
 
   @media screen and (max-width: 1200px) {
@@ -134,15 +140,6 @@ import ALTRUISTS from '../assets/img/altruist.webp';
     .wrapper {
       grid-template-columns:  1fr;
     }
-
-    .altruists {
-      width: 100%
-    }
-
-    .altruists img {
-      width: calc(100% - 30px)
-    }
-
 
     .mas .decor-image {
       max-width: unset;
